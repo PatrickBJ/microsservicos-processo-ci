@@ -1,0 +1,4 @@
+steps:
+- id: "Rodando docker-compsoe"
+    name: 'gcr.io/$PROJECT_ID/projeto-microsservicos'
+    args: ['-f','docker-compose.cloudbuild.yaml','up','-d']
