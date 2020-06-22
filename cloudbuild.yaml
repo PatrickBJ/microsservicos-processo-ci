@@ -5,7 +5,7 @@ steps:
 - id: "Rodando composer"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec','-t','micro-videos-app','composer','install']
-- id: "Copiando .env"
+- id: "Copiando .ENV"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec','-t','micro-videos-app','cp','.env.example','.env']
 - id: "Rodando key:generate"
@@ -14,6 +14,6 @@ steps:
 - id: "Rodando MIGRATIONS"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec','-t','micro-videos-app','php','/var/www/artisan','migrate']
-- id: "Rodando phpunit"
+- id: "Rodando PHPUNIT"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec','-t','micro-videos-app','php','/var/www/vendor/bin/phpunit','-c','/var/www/phpunit.xml']
